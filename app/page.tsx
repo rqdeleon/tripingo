@@ -24,7 +24,7 @@ export default function Home() {
         <div id="rsvn1">
           <Reservation  />
         </div>
-        <div className="w-full bg-teal-200/75">
+        <div className="w-full bg-teal-200/">
           <Testimony />
         </div>
         <div id="contact1">

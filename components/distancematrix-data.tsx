@@ -1,3 +1,5 @@
+"use client"
+
 import { formatDistance } from "date-fns";
 import { Separator } from "./ui/separator";
 import { Label } from "./ui/label";

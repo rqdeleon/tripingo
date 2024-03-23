@@ -203,11 +203,10 @@ return(
                       <Command>
                         <CommandInput placeholder="Search location..." className="h-9" />
                         <CommandList>
-                        <CommandEmpty>No framework found.</CommandEmpty>
+                        <CommandEmpty>No location found.</CommandEmpty>
                           <CommandGroup>
                               {locations.map((loc) => (
                                 <CommandItem
-                                  
                                   key={loc}
                                   value={loc.toString()}
                                   onSelect={
@@ -252,6 +251,7 @@ return(
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
+                          disabled={isLoading}
                           variant={"outline"}
                           className={cn(
                             "w-[280px] justify-start text-left font-normal",
