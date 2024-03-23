@@ -1,14 +1,13 @@
 'use server'
 
 import axios from "axios"
-import { cache } from 'react'
 
 type DistanceProps = {
   pickupAddress: string,
   dropoffAddress: string,
 }
 
-export const GetDistance = cache( async( data:DistanceProps) => {
+export const GetDistance =  async( data:DistanceProps) => {
 
   const { pickupAddress, dropoffAddress } = data
   try {
@@ -25,4 +24,4 @@ export const GetDistance = cache( async( data:DistanceProps) => {
   } catch (error) {
     console.log('[GetDistance API]', error);
   }
-})
+}
