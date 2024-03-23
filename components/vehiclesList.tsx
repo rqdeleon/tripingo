@@ -18,7 +18,9 @@ export function PriceCalc( price:number, distance:number, days:number, isReturn:
   let rental = 0
   if(days <= 1 && distance <= 25 ){
     isReturn ? rental = price - (price * 0.25) * 1.5 : rental = price - (price * 0.25)
-  }else if( days == 1 && distance > 25 && distance <= 199){
+  }else if( days >= 1 && distance > 1 && distance <= 24){
+    isReturn ? rental = (price * days)  : rental = (price * days) 
+  }else if( days >= 1 && distance > 25 && distance <= 199){
     isReturn ? rental = (price * days) + (distance / 5 * 100) * 1.5 : rental = (price * days) + (distance / 5 * 100)
   }else if( days >= 2 && distance >= 200 && distance <= 549){
     isReturn ? rental = price * days + (distance / 5 * 170) * 1.5 : rental = price * days + (distance / 5 * 170)
