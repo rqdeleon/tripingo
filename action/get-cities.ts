@@ -35,7 +35,7 @@ export async function GetMunicipalities(){
 }
 
 export async function GetProvinces(code: string){
-  const locPath = path.join(process.cwd() + '/data/location.json')
+  const locPath = path.join(process.cwd(), '/data/location.json')
   const jsonFile = await fs.readFile(locPath, 'utf8');
   const provinceData = JSON.parse(jsonFile);
   const s = provinceData.map((prov: ProvinceProps)=>{
