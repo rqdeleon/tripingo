@@ -35,10 +35,8 @@ export async function GetMunicipalities(){
 }
 
 export async function GetProvinces(code: string){
-  const locPath = path.join(process.cwd(),'public', 'location.json')
-  const jsonFile = await fs.readFileSync(locPath, 'utf8')
-  const provinceData = JSON.parse(jsonFile);
-  const s = provinceData.map((prov: ProvinceProps)=>{
+  const provinceData = await axios.get('https://raw.githubusercontent.com/rqdeleon/phprovinces/main/location.json')
+  const s = provinceData.data.map((prov: ProvinceProps)=>{
     if(prov.code == code){
       return prov.name
     }else return null
