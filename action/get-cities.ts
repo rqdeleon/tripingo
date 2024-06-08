@@ -51,7 +51,8 @@ export async function SortedLocation(){
 
   const sortedLoc= await Promise.all(mergedLoc.map( async(loc)=>{
     const province = await GetProvinces(loc.provinceCode)
-    if(province !== null && province !== undefined){
+    // @ts-ignore
+    if(province !== null && province !== undefined && province != ""){
       return `${loc.name}, ${province}, Philippines`
     }else{
       return `${loc.name}, Philippines`
