@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   openGraph:{
     title: "TripinGo | Turning your trip into tales",
     description: "Best Shuttle and Tours Service in Philippines",
+    url: "tripingo.mybranches.net",
     images: [
       {
         url: "/opengraph/banner.jpg",
