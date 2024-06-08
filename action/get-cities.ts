@@ -1,8 +1,7 @@
 "use server"
 
 import axios from "axios"
-import  fs from 'fs'
-import path from 'path'
+import { provinces } from "@/data/location"
 
 type LocationProps = {
   code:	string,
@@ -35,8 +34,8 @@ export async function GetMunicipalities(){
 }
 
 export async function GetProvinces(code: string){
-  const provinceData = await axios.get('https://rqdeleon.github.io/phprovinces/location.json')
-  const s = provinceData.data.map((prov: ProvinceProps)=>{
+  const provinceData = provinces
+  const s = provinceData.map((prov: ProvinceProps)=>{
     if(prov.code == code){
       return prov.name
     }else return null
@@ -52,7 +51,7 @@ export async function SortedLocation(){
 
   const sortedLoc= await Promise.all(mergedLoc.map( async(loc)=>{
     const province = await GetProvinces(loc.provinceCode)
-    if(province !== null && province !== undefined && province != "" ){
+    if(province !== null && province !== undefined){
       return `${loc.name}, ${province}, Philippines`
     }else{
       return `${loc.name}, Philippines`

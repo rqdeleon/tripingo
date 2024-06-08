@@ -13,8 +13,19 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Landing Page 01",
-  description: "B&B Landing Page",
+  title: "TripinGo",
+  description: "Shuttle and Tour Services | Laguna, Luzon, Philippines",
+  openGraph:{
+    title: "TripinGo | Turning your trip into tales",
+    description: "Best Shuttle and Tours Service in Philippines",
+    images: [
+      {
+        url: "/opengraph/banner.jpg",
+        width: 1260,
+        height:800,
+      }
+    ]
+  }
 };
 
 export default function RootLayout({
