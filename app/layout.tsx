@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "tripingo.mybranches.net",
     images: [
       {
-        url: "/opengraph/banner.jpg",
+        url: "https://res.cloudinary.com/duwzronom/image/upload/v1717841640/random/r0mfahm7qof1df7utgnc.jpg",
         width: 1260,
         height:800,
       }
